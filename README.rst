@@ -48,5 +48,5 @@ Using
     match_entry = r3py.MatchEntry(b"/test")
     match_entry.request_method = match_entry.METHOD_GET
 
-    result = match_route(match_entry)
+    result = tree.match_route(match_entry)
     result['data']() # Data2
