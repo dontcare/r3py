@@ -40,7 +40,7 @@ cache:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y libr3
+  - sudo apt-get install -y libr3-dev libr3-0
 
 install:
   - pip install --upgrade pip
