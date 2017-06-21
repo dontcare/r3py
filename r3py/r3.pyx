@@ -1,7 +1,6 @@
 # cython: language_level=3
 
 cimport cython
-import numpy
 from cpython.pycapsule cimport PyCapsule_New, PyCapsule_GetPointer
 
 from . cimport r3

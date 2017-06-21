@@ -6,7 +6,6 @@ import setuptools
 from setuptools.command.test import test as TestCommand
 
 install_requires = [
-    "cython",
 ]
 
 tests_require = install_requires + [
