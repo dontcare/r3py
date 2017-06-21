@@ -10,14 +10,13 @@ R3py requires Python 2.7, 3.4+, libr3 and is available on PyPI.
 Ubuntu
 ------
 
-::
-	 sudo apt-get install libr3-dev libr3-0
+``sudo apt-get install libr3-dev libr3-0``
 
 Debian
 ------
 
-::
-	 sudo apt-get install libr3-dev libr3
+
+``sudo apt-get install libr3-dev libr3``
 
 
 Use pip to install it::
@@ -32,14 +31,14 @@ Using
     import r3py
 
 
-		def data1():
-		    print("Data 2")
+    def data1():
+        print("Data 2")
 
     def data2():
-		    print("Data 3")
+        print("Data 3")
 
-		def data3():
-		    print("Data 4")
+    def data3():
+        print("Data 4")
 
     tree = r3py.Tree(10)
     tree.insert_route(tree.METHOD_GET, b"/", data1)
@@ -49,5 +48,5 @@ Using
     match_entry = r3py.MatchEntry(b"/test")
     match_entry.request_method = match_entry.METHOD_GET
 
-    data = match_route(match_entry)
-    data() # Data2
+    result = match_route(match_entry)
+    result['data']() # Data2
