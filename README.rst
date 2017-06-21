@@ -1,8 +1,11 @@
 R3PY
-==========
+====
 
 .. image:: https://img.shields.io/pypi/v/r3py.svg
     :target: https://pypi.python.org/pypi/r3py
+
+
+libr3 is a high-performance path dispatching library. It compiles your route paths into a prefix tree (trie). By using the constructed prefix trie in the start-up time, you may dispatch your routes with efficiency http://c9s.github.com/r3/bench.html
 
 
 R3py requires Python 2.7, 3.4+, libr3 and is available on PyPI.

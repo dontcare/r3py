@@ -7,7 +7,7 @@ compile:
 all: clean compile
 
 release: compile
-	python setup.py sdist upload -r https://pypi.python.org/pypi/r3py;
+	python setup.py sdist upload
 
 clean:
 	rm -rf build/;
