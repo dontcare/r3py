@@ -66,6 +66,8 @@ setuptools.setup(
     version=__version__,
     description=(""),
     long_description=README + "\n\n" + CHANGES,
+    license='MIT License',
+    platforms=['*nix', 'OSX'],
     classifiers=[
         'Programming Language :: C',
         'Programming Language :: Python :: 2.7',
@@ -77,7 +79,7 @@ setuptools.setup(
     keywords='',
     author="Aleksei Sargin",
     author_email="alexei.sargin@gmail.com",
-    url="https://github.com/dontcare/httpparser",
+    url="https://github.com/dontcare/r3py",
     packages=setuptools.find_packages(),
     include_package_data=True,
     zip_safe=False,
