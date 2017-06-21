@@ -1,15 +1,53 @@
 R3PY
 ==========
 
-.. image:: https://travis-ci.org/dontcare/r3py.svg?branch=master
-    :target: https://travis-ci.org/dontcare/r3py
-
 .. image:: https://img.shields.io/pypi/v/r3py.svg
     :target: https://pypi.python.org/pypi/r3py
 
 
 R3py requires Python 2.7, 3.4+, libr3 and is available on PyPI.
 
+Ubuntu
+------
+
+::
+	 sudo apt-get install libr3-dev libr3-0
+
+Debian
+------
+
+::
+	 sudo apt-get install libr3-dev libr3
+
+
 Use pip to install it::
 
     pip install r3py
+
+Using
+-----
+
+.. code:: python
+
+    import r3py
+
+
+		def data1():
+		    print("Data 2")
+
+    def data2():
+		    print("Data 3")
+
+		def data3():
+		    print("Data 4")
+
+    tree = r3py.Tree(10)
+    tree.insert_route(tree.METHOD_GET, b"/", data1)
+    tree.insert_route(tree.METHOD_GET | tree.METHOD_POST, b"/test", data2)
+    tree.insert_route(tree.METHOD_ALL, b"/test/{id}", data3)
+
+    match_entry = r3py.MatchEntry(b"/test")
+    match_entry.request_method = match_entry.METHOD_GET
+
+    data = match_route(match_entry)
+    data() # Data2
