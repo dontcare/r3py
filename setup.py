@@ -7,7 +7,6 @@ from setuptools.command.test import test as TestCommand
 
 install_requires = [
     "cython",
-    "numpy"
 ]
 
 tests_require = install_requires + [
@@ -20,7 +19,6 @@ ext_modules = [
             "r3py/r3.c",
         ],
         libraries=['pcre', 'r3'],
-        library_dirs=['./build/r3/lib'],
     ),
 ]
 

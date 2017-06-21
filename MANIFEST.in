@@ -1,0 +1,2 @@
+recursive-include r3py *.c *.pxd
+include MANIFEST.in LICENSE
