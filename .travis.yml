@@ -22,19 +22,19 @@ matrix:
       services: [docker]
       env:
         - PLATFORM=linux
-      before_install:
-        - sudo add-apt-repository ppa:r3-team/libr3-daily -y
-        - sudo apt-get update -q
-        - sudo apt-get install -y libr3-dev
-        - sudo apt-get install -y libpcre3-dev
+      #before_install:
+      #  - sudo add-apt-repository ppa:r3-team/libr3-daily -y
+      #  - sudo apt-get update -q
+      #  - sudo apt-get install -y libr3-dev
 
-#addons:
-#  apt:
-#    sources:
-#      - sourceline: 'ppa:r3-team/libr3-daily'
-#    packages:
-#      - libr3-dev
-#      - libpcre3-dev
+addons:
+  apt:
+    sources:
+      - sourceline: 'deb http://ppa.launchpad.net/r3-team/libr3-daily/ubuntu trusty main '
+      - sourceline: 'deb-src http://ppa.launchpad.net/r3-team/libr3-daily/ubuntu trusty main '
+    packages:
+      - libr3-dev
+      - libpcre3-dev
             
 cache:
   pip
