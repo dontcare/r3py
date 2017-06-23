@@ -17,35 +17,13 @@ matrix:
       language: python
       python: "2.7.13"
       services: [docker]
-      env: BUILD=wheels,release PYTHON_VERSION=2.7.13
+      env:
+        - BUILD=wheels,release
+        - PYTHON_VERSION=2.7.13
+      before_install:
+        - sudo add-apt-repository ppa:r3-team/libr3-daily -y
+        - sudo apt-get update -q
+        - sudo apt-get install libr3
 
-    - os: linux
-      dist: stretch
-      sudo: false
-      language: python
-      python: "3.5.3"
-      services: [docker]
-      env: BUILD=wheels,release PYTHON_VERSION=3.5.3
-
-    - os: linux
-      dist: stretch
-      sudo: false
-      language: python
-      python: "3.6.1"
-      services: [docker]
-      env: BUILD=wheels,release PYTHON_VERSION=3.6.1
-
-cache:
-  pip
-
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y libr3-dev libr3-0
-
-install:
-  - pip install --upgrade pip
-  - pip install cython
-
-script:
-  - pip install cython
-  - make
+      install:
+        - make
