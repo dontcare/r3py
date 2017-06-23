@@ -16,7 +16,7 @@ matrix:
   include:
     - os: linux
       dist: stretch
-      sudo: false
+      sudo: required
       language: python
       python: "2.7.13"
       services: [docker]
