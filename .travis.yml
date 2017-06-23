@@ -7,6 +7,9 @@ env:
     - TWINE_USERNAME: dontcare
     - TWINE_REPOSITORY: r3py
     - TWINE_REPOSITORY_URL: https://upload.pypi.org/legacy/
+    - CIBW_BEFORE_BUILD="sh -c 'pip install cython && make'"
+    - CIBW_SKIP="cp26-* cp27-* cp33-* cp34*"
+    - CIBW_OUPUT_DIR="dist/"
 
 matrix:
   fast_finish: true
@@ -18,12 +21,20 @@ matrix:
       python: "2.7.13"
       services: [docker]
       env:
-        - BUILD=wheels,release
-        - PYTHON_VERSION=2.7.13
+        - PLATFORM=linux
       before_install:
         - sudo add-apt-repository ppa:r3-team/libr3-daily -y
         - sudo apt-get update -q
         - sudo apt-get install libr3
+        - pip install --upgrade pip
 
-      install:
-        - make
+
+cache:
+  pip
+
+install:
+  - pip install pip --upgrade  
+  - pip install cibuildwheel
+
+script:
+  - cibuildwheel --platform $PLATFORM --output-dir $CIBW_OUPUT_DIR
