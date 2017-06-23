@@ -31,7 +31,6 @@ matrix:
 addons:
   apt:
     sources:
-      - deadsnakes
       - sourceline: 'ppa:r3-team/libr3-daily'
     packages:
       - libr3-dev
