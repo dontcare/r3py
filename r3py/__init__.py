@@ -1,9 +1,18 @@
-from .r3 import MatchEntry, Tree
+from .r3 import (ALL, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, MatchEntry,
+                 Tree)
 
-__version__ = "0.1.7"
+__version__ = "0.2.0"
 
 __all__ = [
     __version__,
-    MatchEntry,
     Tree,
+    MatchEntry,
+    GET,
+    POST,
+    PUT,
+    DELETE,
+    PATCH,
+    HEAD,
+    OPTIONS,
+    ALL,
 ]

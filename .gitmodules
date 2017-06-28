@@ -1,0 +1,4 @@
+[submodule "vendors/r3"]
+	path = vendors/r3
+	url = https://github.com/c9s/r3.git
+	branch = 2.0

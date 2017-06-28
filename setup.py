@@ -17,7 +17,19 @@ ext_modules = [
         sources=[
             "r3py/r3.c",
         ],
-        libraries=['pcre', 'r3'],
+        extra_compile_args=['-O2'],
+        include_dirs=['./verndors/'],
+        extra_objects=[
+            './vendors/r3/src/edge.o',
+            './vendors/r3/src/match_entry.o',
+            './vendors/r3/src/memory.o',
+            './vendors/r3/src/node.o',
+            './vendors/r3/src/slug.o',
+            './vendors/r3/src/str.o',
+            './vendors/r3/src/token.o',
+            './vendors/r3/3rdparty/libr3ext_la-zmalloc.o'
+        ],
+        libraries=['pcre'],
     ),
 ]
 
