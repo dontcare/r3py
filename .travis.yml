@@ -18,7 +18,8 @@ matrix:
       env:
         - CIBW_BEFORE_BUILD="sh -c 'pip install cython && make r3 && make'"
         - PLATFORM=macos
-      #before_install:
+      before_install:
+        - brew install pcre
       #  - python -m pip install pip --upgrade
       #  - python -m pip install cython
       #  - python -m pip install twine
@@ -42,7 +43,8 @@ matrix:
       env:
         - CIBW_BEFORE_BUILD="pip install --upgrade pip && pip install cython && make"
         - PLATFORM=linux
-      #install:
+      before_install:
+        - sudo apt-get install libpcre3-dev
       #  - pip install cibuildwheel
       #  - pip install twine
       #script:
